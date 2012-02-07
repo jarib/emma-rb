@@ -1,6 +1,6 @@
 # Emma
 
-TODO: Write a gem description
+Ruby gem wrapping the [EMMA library](http://emma.sourceforge.net/).
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+TODO.
 
 ## Contributing
 
