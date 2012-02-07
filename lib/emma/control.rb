@@ -9,8 +9,14 @@ module Emma
       @ec = opts[:coverage_file] || Tempfile.new("emma-coverage").path
     end
 
-    def get
-      emma "ctl", "-c" "coverage.get,#{@ec},true,true"
+    def get(opts = {})
+      merge = true
+      merge = opts[:merge] if opts.key? :merge
+
+      stop_collection = false
+      stop_collection = opts[:stop_collection] if opts.key? :stop_collection
+
+      emma "ctl", "-c", "coverage.get,#{@ec},#{merge},#{stop_collection}"
     end
 
     def report(opts = {})
@@ -24,6 +30,7 @@ module Emma
     end
 
     def instrument(paths, opts = {})
+      paths = Array(paths)
       mode = opts[:mode] || 'fullcopy'
       filter = opts[:filter] || '*'
 
@@ -34,6 +41,7 @@ module Emma
            '-outfile', @em,
            '-merge', 'yes',
            '-filter', filter,
+           '-verbose',
            *inputs
     end
 

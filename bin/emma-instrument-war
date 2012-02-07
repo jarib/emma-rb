@@ -5,7 +5,7 @@ require 'tmpdir'
 
 def unpack_war(path)
   destination = Dir.mktmpdir("emma-unzip")
-  
+
   Dir.chdir destination do
     proc = ChildProcess.new("jar", "xf", path)
     proc.io.inherit!
