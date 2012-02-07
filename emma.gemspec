@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "emma"
   gem.require_paths = ["lib"]
   gem.version       = Emma::VERSION
+
+  gem.add_dependency "childprocess"
 end

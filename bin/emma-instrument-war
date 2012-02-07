@@ -1,0 +1,65 @@
+require 'emma'
+require 'optparse'
+require 'tempfile'
+require 'tmpdir'
+
+def unpack_war(path)
+  destination = Dir.mktmpdir("emma-unzip")
+  
+  Dir.chdir destination do
+    proc = ChildProcess.new("jar", "xf", path)
+    proc.io.inherit!
+
+    proc.start
+    proc.wait
+
+    raise "unpacking failed" if proc.exit_code != 0
+  end
+
+  destination
+end
+
+def pack_war(dir, dest)
+  proc = ChildProcess.new("jar", 'cf', dest, '-C', dir, '.')
+  proc.io.inherit!
+
+  proc.start
+  proc.wait
+
+  raise "packing failed" if proc.exit_code != 0
+end
+
+options = {}
+
+parser = OptionParser.new do |opts|
+  opts.on("-f", "--filter FILTER") { |filter| options[:filter] = filter }
+end
+
+parser.parse!(ARGV)
+
+war          = ARGV.shift or abort(parser.to_s)
+basename     = File.basename war, '.war'
+metadata     = "#{basename}.em"
+coverage     = "#{basename}.ec"
+instrumented = "#{basename}-instrumented.war"
+
+emma = Emma::Control.new :metadata_file => metadata, :coverage_file => coverage
+
+print "unpacking #{war}..."
+exploded = unpack_war File.expand_path(war)
+puts 'done.'
+
+begin
+  puts "instrumenting #{war} [em=#{metadata}, ec=#{coverage}] with EMMA..."
+
+  jars = Dir[File.join(exploded, '**/*.jar')]
+  emma.instrument jars, :mode => :overwrite, :filter => options[:filter]
+  puts "done."
+
+  print "repacking to #{instrumented}..."
+  pack_war(exploded, instrumented)
+  puts "done."
+ensure
+  FileUtils.rm_rf exploded
+end
+

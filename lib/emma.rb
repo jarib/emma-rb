@@ -1,5 +1,9 @@
 require "emma/version"
+require 'childprocess'
+require 'tempfile'
+require 'emma/control'
 
 module Emma
-  # Your code goes here...
+  class Error < StandardError
+  end
 end
