@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- EMMA v2.1.5320 (stable) report, generated Tue Feb 07 20:57:00 CET 2012 -->
+
+<report>
+  <stats>
+    <packages value="624"/>
+    <classes value="5919"/>
+    <methods value="57688"/>
+    <srcfiles value="3973"/>
+    <srclines value="265538"/>
+  </stats>
+  <data>
+    <all name="all classes">
+      <coverage type="class, %" value="30%  (1776/5919)"/>
+      <coverage type="method, %" value="9%   (5062/57688)"/>
+      <coverage type="block, %" value="5%   (60043/1162547)"/>
+      <coverage type="line, %" value="5%   (14026.7/265538)"/>
+
+      <package name="com.example.actions.map">
+        <coverage type="class, %" value="0%   (0/1)"/>
+        <coverage type="method, %" value="0%   (0/7)"/>
+        <coverage type="block, %" value="0%   (0/325)"/>
+        <coverage type="line, %" value="0%   (0/58)"/>
+
+        <srcfile name="MapAction.java">
+          <coverage type="class, %" value="0%   (0/1)"/>
+          <coverage type="method, %" value="0%   (0/7)"/>
+          <coverage type="block, %" value="0%   (0/325)"/>
+          <coverage type="line, %" value="0%   (0/58)"/>
+
+          <class name="MapAction">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/7)"/>
+            <coverage type="block, %" value="0%   (0/325)"/>
+            <coverage type="line, %" value="0%   (0/58)"/>
+
+            <method name="MapAction (): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/9)"/>
+              <coverage type="line, %" value="0%   (0/3)"/>
+            </method>
+            <method name="extendService (HttpServletRequest, HttpServletResponse): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/53)"/>
+              <coverage type="line, %" value="0%   (0/10)"/>
+            </method>
+            <method name="handleParameters (HttpServletRequest): Map">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/127)"/>
+              <coverage type="line, %" value="0%   (0/19)"/>
+            </method>
+            <method name="handleSearchParameters (HttpServletRequest, Map): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/59)"/>
+              <coverage type="line, %" value="0%   (0/8)"/>
+            </method>
+            <method name="handleShowPin (HttpServletRequest, Map): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/35)"/>
+              <coverage type="line, %" value="0%   (0/8)"/>
+            </method>
+            <method name="rp (HttpServletRequest, String): String">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/5)"/>
+              <coverage type="line, %" value="0%   (0/1)"/>
+            </method>
+            <method name="setupDefaultMap (Map): void">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/37)"/>
+              <coverage type="line, %" value="0%   (0/9)"/>
+            </method>
+          </class>
+        </srcfile>
+      </package>
+    </all>
+  </data>
+</report>

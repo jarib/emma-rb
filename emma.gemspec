@@ -16,4 +16,6 @@ Gem::Specification.new do |gem|
   gem.version       = Emma::VERSION
 
   gem.add_dependency "childprocess"
+  gem.add_dependency "nokogiri"
+  gem.add_development_dependency "rspec", "~> 2.0"
 end

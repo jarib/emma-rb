@@ -30,16 +30,17 @@ module Emma
     end
 
     def instrument(paths, opts = {})
-      paths = Array(paths)
-      mode = opts[:mode] || 'fullcopy'
+      paths  = Array(paths)
+      mode   = opts[:mode] || 'fullcopy'
       filter = opts[:filter] || '*'
+      merge  = opts[:merge] == false ? 'no' : 'yes'
 
       inputs = paths.map { |path| ['-instrpath', path] }.flatten
 
       emma 'instr',
            '-outmode', mode,
            '-outfile', @em,
-           '-merge', 'yes',
+           '-merge', merge,
            '-filter', filter,
            '-verbose',
            *inputs
