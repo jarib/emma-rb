@@ -25,9 +25,9 @@ Instrument a war:
 From Ruby:
 
 ```ruby
-    emma = Emma.new(:metadata_file => "coverage.em")
-    emma.get # connects to the app
-    emma.report :format => "html"
+emma = Emma::Control.new(:metadata_file => "coverage.em")
+emma.get # connects to the app
+emma.report :format => "html"
 ```
 
 ## Contributing
