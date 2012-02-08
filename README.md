@@ -18,7 +18,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO.
+Instrument a war:
+
+    $ emma-instrument-war --filter "com.example.*" /path/to/some.war
+
+From Ruby:
+
+```ruby
+    emma = Emma.new(:metadata_file => "coverage.em")
+    emma.get # connects to the app
+    emma.report :format => "html"
+```
 
 ## Contributing
 
