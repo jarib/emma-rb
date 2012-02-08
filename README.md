@@ -2,6 +2,8 @@
 
 Ruby gem wrapping the [EMMA library](http://emma.sourceforge.net/).
 
+[![Build Status](https://secure.travis-ci.org/jarib/emma-rb.png)](http://travis-ci.org/jarib/emma-rb)
+
 ## Installation
 
 Add this line to your application's Gemfile:
